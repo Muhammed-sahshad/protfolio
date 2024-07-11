@@ -13,12 +13,18 @@ function toggleMenu() {
     var nameInput = document.getElementById('name');
     var nameError = document.getElementById('nameError');
     var name = nameInput.value.trim();
+    var length = name.length;
     if (name === '') {
       nameError.textContent = 'Name is required';
       isValid = false;
     } else {
       nameError.textContent = '';
     }
+     if(length<5){
+      nameError.textContent = 'Name must contain 5 charecters';
+     }else{
+      nameError.textContent = '';
+     }
   
     // Validate email field
     var emailInput = document.getElementById('email');
@@ -41,11 +47,18 @@ function toggleMenu() {
     var messageInput = document.getElementById('message');
     var messageError = document.getElementById('messageError');
     var message = messageInput.value.trim();
+    var messaeLength= message.length;
     if (message=== '') {
         messageError.textContent = 'message is required';
       isValid = false;
     } else {
         messageError.textContent = '';
+    }
+
+    if(messaeLength<20){
+      messageError.textContent = 'message must contain 20 charecters';
+    }else{
+      messageError.textContent = '';
     }
   
     return isValid;
